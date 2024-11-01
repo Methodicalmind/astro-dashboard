@@ -1,5 +1,6 @@
 ---
 import DashboardLayout from '@/layouts/DashboardLayout.astro'
+import { ReportTable } from '@/components/ReportTable'
 
 const { cookies, redirect } = Astro
 const accessToken = cookies.get('sb-access-token')
@@ -11,5 +12,8 @@ if (!accessToken && !refreshToken) {
 ---
 
 <DashboardLayout title='Dashboard | Teams'>
-  <h1 class='pt-5 lg:pl-72'>Hello from the Dashboard reports page!</h1>
+  <ReportTable client:load>
+    <div slot="fallback">Loading</div>
+  </ReportTable>
+  <h1>Hello from the Dashboard reports page!</h1>
 </DashboardLayout>

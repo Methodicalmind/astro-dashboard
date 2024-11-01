@@ -8,7 +8,7 @@ import type { DashboardFlyoutProps } from '@/types'
 export function DashboardFlyout({ sidebarOpen = false, setSidebarOpen, path }: DashboardFlyoutProps) {
   return (
     <Transition.Root show={sidebarOpen} as={Fragment}>
-      <Dialog as='div' className='relative z-50 lg:hidden' onClose={setSidebarOpen}>
+      <Dialog as='div' className='relative z-50 md:hidden' onClose={setSidebarOpen}>
         <Transition.Child
           as={Fragment}
           enter='transition-opacity ease-linear duration-300'
